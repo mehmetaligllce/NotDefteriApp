@@ -40,9 +40,12 @@ app.use(session({
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }))
 app.use(flash())
+
+app.get('/', (req, res) => {
+    res.redirect('/login');
+})
+
 app.use(auth)
-
-
 
 
 app.listen(3000);
