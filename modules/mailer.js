@@ -19,7 +19,7 @@ export const sendMail = async (userEmail, resetLink) => {
         const mailOptions = {
             from: process.env.EMAIL,
             to: userEmail,
-            subject: 'Not Defteri - Şifre Sıfırlama Talebi',
+            subject: 'Renv Studio - Şifre Sıfırlama Talebi',
             html: `
                 <h3>Merhaba!</h3>
                 <p>Şifreni sıfırlamak için aşağıdaki bağlantıya tıkla:</p>
@@ -28,9 +28,11 @@ export const sendMail = async (userEmail, resetLink) => {
             `
         }
 
-        await transporter.sendMail(mailOptions)
+        await transporter.sendMail(mailOptions);
+        return true;
     }
     catch (e) {
-        console.log(e)
+        console.log("Mail Hatasi:", e);
+        return false;
     }
 }

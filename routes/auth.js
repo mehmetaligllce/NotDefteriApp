@@ -128,15 +128,22 @@ router.post('/send-mail', async (req, res) => {
         const token = crypto.randomBytes(32).toString('hex');
 
         user.resetPasswordToken = token;
-        user.resetPasswordExpires = Date.now() + 3600000; 
-        await user.save(); 
+        user.resetPasswordExpires = Date.now() + 3600000;
+        await user.save();
 
-        const resetLink = `http://${req.headers.host}/reset-password/${token}`;
-        sendMail(user.email, resetLink);
+        const resetLink = `https://${req.headers.host}/reset-password/${token}`;
+        const isSent = await sendMail(user.email, resetLink);
 
-        req.flash('success', 'Şifre sıfırlama e-postası gönderildi!');
-        res.redirect('/login');
+        if (isSent) {
+            req.flash('success', 'Şifre sıfırlama e-postası gönderildi!');
+            res.redirect('/login');
+        } else {
+            req.flash('error', 'E-posta gönderilemedi. Lütfen sistem değişkenlerini kontrol edin.');
+            res.redirect('/reset-password');
+        }
+
     } catch (e) {
+        req.flash('error', 'Bir sunucu hatası oluştu!');
         res.redirect('/reset-password');
     }
 })
