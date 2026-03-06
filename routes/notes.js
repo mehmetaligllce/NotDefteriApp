@@ -29,9 +29,7 @@ router.get('/delete/:id', authMiddleware, async (req, res) => {
 router.get('/edit/:id', authMiddleware, async (req, res) => {
     try {
         const id = req.params.id;
-        // Düzenlenecek notu veritabanından alıyoruz
         const note = await NoteSchema.findById(id).lean();
-        // Arayüze "note" adında gönderiyoruz
         res.render('edit', { note: note })
     } catch (e) {
         console.log(e);
@@ -55,7 +53,6 @@ router.post('/add-note', authMiddleware, async (req, res) => {
     }
 })
 
-// Rota URL'ini düzelttik: sadece /edit/:id yeterli. Veriler formdan (req.body) gelecek.
 router.post('/edit/:id', authMiddleware, async (req, res) => {
 
     try {
