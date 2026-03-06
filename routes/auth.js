@@ -131,8 +131,8 @@ router.post('/send-mail', async (req, res) => {
         user.resetPasswordExpires = Date.now() + 3600000; 
         await user.save(); 
 
-        const resetLink = `http://localhost:3000/reset-password/${token}`;
-         sendMail(user.email, resetLink);
+        const resetLink = `http://${req.headers.host}/reset-password/${token}`;
+        sendMail(user.email, resetLink);
 
         req.flash('success', 'Şifre sıfırlama e-postası gönderildi!');
         res.redirect('/login');
