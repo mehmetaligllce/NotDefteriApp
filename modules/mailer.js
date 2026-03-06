@@ -1,5 +1,8 @@
 import nodemailer from 'nodemailer'
 import dotenv from 'dotenv'
+import dns from 'dns'
+
+dns.setDefaultResultOrder('ipv4first');
 
 dotenv.config(
     { quiet: true }
@@ -12,7 +15,7 @@ const transporter = nodemailer.createTransport({
         pass: process.env.PASSWORD
     },
     connectionTimeout: 5000,
-    socketTimeout: 5000 
+    socketTimeout: 5000
 })
 
 
