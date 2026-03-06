@@ -1,0 +1,17 @@
+<div class="auth-container">
+    <h1>Kayıt Ol</h1>
+
+    <form action="/register" method="POST" class="auth-form">
+        <input type="text" name="username" class="auth-input" placeholder="Kullanıcı Adı" required autocomplete="off">
+        <input type="email" name="email" class="auth-input" placeholder="E-posta" required autocomplete="on">
+        <input type="password" name="password" class="auth-input" placeholder="Şifre" required>
+        <button type="submit" class="auth-btn">Kayıt Ol</button>
+    </form>
+    {{#if error}}
+    <div class="alert">
+        {{error}}
+    </div>
+    {{/if}} 
+
+    <a href="/login" class="auth-link">Zaten hesabın var mı? Giriş Yap</a>
+</div>

@@ -1,0 +1,18 @@
+<div class="auth-container">
+    <h1>Giriş Yap</h1>
+
+    {{#if error}}
+    <div class="alert">
+        {{error}}
+    </div>
+    {{/if}}
+
+    <form action="/login" method="POST" class="auth-form">
+        <input type="text" name="username" class="auth-input" placeholder="Kullanıcı Adı" required autocomplete="off">
+        <input type="password" name="password" class="auth-input" placeholder="Şifre" required>
+        <button type="submit" class="auth-btn"> Giriş Yap</button>
+    </form>
+    <a href="/reset-password" class="reset-btn">Şifreni mi unuttun? Sıfırla!</a>
+
+    <a href="/register" class="auth-link">Hesabın yok mu? Kayıt Ol</a>
+</div>

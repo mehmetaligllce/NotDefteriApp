@@ -1,0 +1,13 @@
+<div class="auth-container notes-container">
+    <div class="header-container">
+        <h1 style="margin: 0;">Notu Düzenle</h1>
+        <a href="/notes" class="logout-btn">Geri Dön</a>
+    </div>
+
+    <form action="/notes/edit/{{note._id}}" method="POST" class="auth-form add-note-form">
+        <input type="text" name="title" class="auth-input" placeholder="Not Başlığı" value="{{note.title}}" required>
+        <textarea name="content" class="auth-input" placeholder="Notunu buraya yaz..." rows="4"
+            required>{{note.content}}</textarea>
+        <button type="submit" class="auth-btn">Düzenlemeyi Kaydet</button>
+    </form>
+</div>

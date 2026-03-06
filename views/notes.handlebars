@@ -1,0 +1,32 @@
+<div class="auth-container notes-container">
+    <div class="header-container"
+        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h1 style="margin: 0;">Notlarım</h1>
+        <a href="/logout" class="logout-btn">Çıkış Yap</a>
+    </div>
+    <form action="/notes/add-note" method="POST" class="auth-form add-note-form">
+        <input type="text" name="title" class="auth-input" placeholder="Not Başlığı" required>
+
+        <textarea name="content" class="auth-input" placeholder="Notunu buraya yaz..." rows="4" required></textarea>
+
+        <button type="submit" class="auth-btn">Not Ekle</button>
+    </form>
+
+    <div class="notes-list">
+        {{#each notes}}
+        <div class="note-card">
+            <h3 class="note-title">{{this.title}}</h3>
+            <p class="note-content">{{this.content}}</p>
+            <div class="note-footer">
+                <div class="note-actions">
+                    <a href="/notes/edit/{{this._id}}" class="edit-btn">Düzenle</a>
+                    <a href="/notes/delete/{{this._id}}" class="delete-btn">Sil</a>
+                </div>
+                <p class="note-date">{{this.date}}</p>
+            </div>
+        </div>
+        {{else}}
+        <p class="no-notes-msg">Henüz hiç notun yok.</p>
+        {{/each}}
+    </div>
+</div>

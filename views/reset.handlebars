@@ -1,0 +1,18 @@
+<div class="auth-container">
+    <h1>Şifre Sıfırlama</h1>
+    <p class="reset-info">Sisteme kayıtlı olduğun E-Posta adresini gir. Eğer sistemde bulursak, sana şifreni sıfırlaman
+        için bir bağlantı göndereceğiz.</p>
+
+    {{#if error}}
+    <div class="alert">
+        {{error}}
+    </div>
+    {{/if}}
+
+    <form action="/send-mail" method="POST" class="auth-form">
+        <input type="email" name="email" class="auth-input" placeholder="E-Posta Adresin" required>
+        <button type="submit" class="auth-btn">Sıfırlama Linki Gönder</button>
+    </form>
+
+    <a href="/login" class="auth-link">Geri Dön</a>
+</div>

@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1f1c2c, #928DAB);
+    /* Koyu modern bir geçiş */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Auth (Login/Register) Kartı Tasarımı */
+.auth-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    /* Cam efekti */
+    padding: 40px 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+.auth-container h1 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 14px 15px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    font-size: 16px;
+    box-sizing: border-box;
+    outline: none;
+    transition: 0.3s;
+}
+
+.auth-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.auth-input:focus {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.auth-btn {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    /* Tatlı bir buton geçişi */
+    color: #fff;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.auth-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(245, 87, 108, 0.4);
+}
+
+.auth-link {
+    display: block;
+    margin-top: 25px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.auth-link:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* --- Notlar Sayfası Ekstra Stiller --- */
+.notes-container {
+    max-width: 600px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.add-note-form {
+    margin-bottom: 30px;
+}
+
+.notes-list {
+    text-align: left;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Scrollbar için Özel Tasarım */
+.notes-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.notes-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.note-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: transform 0.2s;
+}
+
+.note-card:hover {
+    transform: translateX(5px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.note-title {
+    margin-top: 0;
+    color: #f093fb;
+    font-size: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.note-content {
+    margin-bottom: 0;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.no-notes-msg {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    margin-top: 40px;
+}
+
+/* Çıkış Yap Butonu */
+.logout-btn {
+    background: rgba(255, 59, 48, 0.2);
+    color: #ff3b30;
+    border: 1px solid rgba(255, 59, 48, 0.5);
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.logout-btn:hover {
+    background: #ff3b30;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(255, 59, 48, 0.4);
+}
+
+.alert {
+
+    background: rgba(255, 59, 48, 0.2);
+    color: #ff3b30;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 59, 48, 0.5);
+}
+
+.logout-btn {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.note-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+}
+
+.note-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+    text-decoration: none;
+    font-size: 13px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.edit-btn {
+    background: rgba(110, 142, 251, 0.4);
+    border: 1px solid rgba(110, 142, 251, 0.6);
+}
+
+.edit-btn:hover {
+    background: rgba(110, 142, 251, 0.8);
+}
+
+.delete-btn {
+    background: rgba(255, 59, 48, 0.4);
+    border: 1px solid rgba(255, 59, 48, 0.6);
+}
+
+.delete-btn:hover {
+    background: rgba(255, 59, 48, 0.8);
+}
+
+.note-date {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 12px;
+    margin: 0;
+    font-style: italic;
+}
+
+.reset-info {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.reset-btn {
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #f093fb;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.reset-btn:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.mail-link {
+    padding: 10px 15px;
+    background: #f093fb;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
